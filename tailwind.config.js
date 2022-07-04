@@ -7,7 +7,7 @@ module.exports = {
         backgroundLighter: '#001133',
         border: '#102A44',
         text: '#8BADC1',
-        primary: '#00F0FF',
+        primary: 'var(--primary-color)',
       },
     },
   },

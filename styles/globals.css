@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-color: #00f0ff;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: var(--primary-color);
+}
+
+::selection {
+  color: white;
+  background: var(--primary-color);
+}
