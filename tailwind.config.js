@@ -9,7 +9,10 @@ module.exports = {
         text: '#8BADC1',
         primary: 'var(--primary-color)',
       },
+      fontFamily: {
+        IntegralCF: ['IntegralCF', 'sans-serif'],
+      },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }
