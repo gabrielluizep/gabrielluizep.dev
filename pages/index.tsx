@@ -17,10 +17,7 @@ export default function Index() {
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-20">
             <div>
               <h1 className="text-4xl text-text font-IntegralCF mt-8 mb-8 tracking-widest line leading-tight">
-                Olá, eu sou <br />{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-br to-purple-600 from-primary tracking-normal">
-                  Gabriel Espindola!
-                </span>
+                Olá, eu sou <br /> <span className="text-primary tracking-normal">Gabriel Espindola!</span>
               </h1>
               <p className="text-text max-w-sm text-lg mb-8 tracking-wider">
                 Desenvolvedor de software, estudante de engenharia e apaixonado por tecnologia e inovação.
@@ -36,14 +33,15 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="relative m-auto h-[358px] w-[268px] aspect-square bg-cyan-500 rounded-md mt-8 lg:mt-0">
+            <div className="relative m-auto h-[358px] w-[267px] aspect-square bg-cyan-500 mt-8 lg:mt-0">
               <Image
-                src="/profile-picture-original.jpg"
+                src="/profile-picture.png"
                 alt="Profile picture"
-                objectFit="contain"
+                objectFit="cover"
                 layout="fill"
                 className="z-10"
               />
+              <Image src="/profile-picture-nobg.png" alt="Profile picture" objectFit="cover" layout="fill" />
               <span className="absolute -bottom-4 -left-5 z-0">
                 <Image src={'/vec1.svg'} aria-hidden alt="decoration" width={64} height={64} />
               </span>
