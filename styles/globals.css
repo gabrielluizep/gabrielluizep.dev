@@ -16,3 +16,8 @@
   color: white;
   background: var(--primary-color);
 }
+
+@font-face {
+  font-family: 'IntegralCF';
+  src: url('../public/IntegralCF-Bold.otf');
+}
