@@ -1,12 +1,18 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-import { FiMenu, FiX, FiLinkedin, FiTwitter, FiGithub } from 'react-icons/fi'
+import { FiMenu, FiX, FiLinkedin, FiTwitter, FiGithub, FiGlobe } from 'react-icons/fi'
 import { SiJavascript, SiNextdotjs, SiPrisma, SiReact, SiTailwindcss, SiTypescript } from 'react-icons/si'
+import { useIntl } from 'react-intl'
 
-// bg-blue-300/30 sm:bg-green-300/30 md:bg-yellow-300/30 lg:bg-red-300/30 xl:bg-orange-300/30 2xl:bg-slate-300/30
 export default function Index() {
+  const intl = useIntl()
+
+  const title = intl.formatMessage({ id: 'page.home.hero.title' })
+  const subtitle = intl.formatMessage({ id: 'page.home.hero.subtitle' })
+
   return (
     <>
       <div className="py-8 px-6 min-h-screen bg-gradient-to-tl from-backgroundLighter to-backgroundDarker  sm:px-16 md:px-24 lg:px-48 2xl:px-56 scroll-smooth">
@@ -17,11 +23,9 @@ export default function Index() {
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-20">
             <div>
               <h1 className="text-4xl text-text font-IntegralCF mt-8 mb-8 tracking-widest line leading-tight">
-                Olá, eu sou <br /> <span className="text-primary tracking-normal">Gabriel Espindola!</span>
+                {title} <br /> <span className="text-primary tracking-normal">Gabriel Espindola!</span>
               </h1>
-              <p className="text-text max-w-sm text-lg mb-8 tracking-wider">
-                Desenvolvedor de software, estudante de engenharia e apaixonado por tecnologia e inovação.
-              </p>
+              <p className="text-text max-w-sm text-lg mb-8 tracking-wider">{subtitle}</p>
 
               <div className="text-text transition-colors text-2xl flex space-x-5">
                 <SiReact className="hover:text-primary" />
@@ -41,7 +45,7 @@ export default function Index() {
                 layout="fill"
                 className="z-10"
               />
-              <Image src="/profile-picture-nobg.png" alt="Profile picture" objectFit="cover" layout="fill" />
+
               <span className="absolute -bottom-4 -left-5 z-0">
                 <Image src={'/vec1.svg'} aria-hidden alt="decoration" width={64} height={64} />
               </span>
@@ -95,12 +99,28 @@ const SideLinks = () => (
 const Navbar = () => {
   const [open, setOpen] = useState(false)
 
+  const router = useRouter()
+  const intl = useIntl()
+
+  const about = intl.formatMessage({ id: 'navbar.about' })
+  const contact = intl.formatMessage({ id: 'navbar.contact' })
+  const curriculum = intl.formatMessage({ id: 'navbar.curriculum' })
+
+  const handleChangeLanguage = () => {
+    if (router.locale === 'en') {
+      return router.push(router.asPath, router.asPath, { locale: 'pt-BR' })
+    }
+
+    return router.push(router.asPath, router.asPath, { locale: 'en' })
+  }
+
   return (
     <nav className="flex items-center justify-between">
       <div className="flex space-x-4 items-center">
         <Image src="/logo.svg" alt="logo" width={48} height={48} className="hover:rotate-45 transition-all" />
         <h1 className="text-primary font-mono">gabrielluizep.dev</h1>
       </div>
+
       {/* Mobile Menu */}
       <div className="relative md:hidden" onClick={() => setOpen((prev) => !prev)}>
         {!open ? <FiMenu color="white" size={32} /> : <FiX color="white" size={32} />}
@@ -111,17 +131,17 @@ const Navbar = () => {
         >
           <p />
           <Link href="#about" passHref>
-            Sobre
+            {about}
           </Link>
           <p />
 
           <Link href="mailto:gabrielluizep@hotmail" passHref>
-            Contato
+            {contact}
           </Link>
           <p />
 
           <Link href="/curriculum.pdf" passHref>
-            Currículo
+            {curriculum}
           </Link>
 
           <a
@@ -176,16 +196,20 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden space-x-5 md:block md:space-x-10">
+      <div className="hidden space-x-5 md:flex md:space-x-10 text-white items-center">
         {/* <Link href="#about" passHref>
           <button className="text-white py-1 px-4 border-2 border-text">Sobre</button>
         </Link> */}
         <Link href="mailto:gabrielluizep@hotmail.com" passHref>
-          <button className="text-white py-1 px-4 border-2 border-text">Contato</button>
+          <button className="py-1 px-4 border-2 border-text">{contact}</button>
         </Link>
         <Link href="/curriculum.pdf" passHref>
-          <button className="text-white py-2 px-4 border-2 border-primary">Currículo</button>
+          <button className="py-2 px-4 border-2 border-primary">{curriculum}</button>
         </Link>
+
+        <button className="py-2 px-2 border-2 border-primary" onClick={handleChangeLanguage}>
+          <FiGlobe color="inherit" size={24} />
+        </button>
       </div>
     </nav>
   )
