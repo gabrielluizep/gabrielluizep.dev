@@ -14,7 +14,7 @@ const messages = {
 import '/styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const { locale } = useRouter()
+  const { locale = 'en' } = useRouter()
 
   return (
     <>
