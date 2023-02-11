@@ -11,6 +11,8 @@ export default function Portfolio() {
 
   const portfolioProjects = intl.formatMessage({ id: 'page.portfolio.portfolioProjects' })
 
+  console.log(intl.locale)
+
   return (
     <div className="min-h-screen bg-gradient-to-tl from-backgroundLighter to-backgroundDarker px-8">
       <main className="mx-auto max-w-md py-14 md:max-w-xl">
