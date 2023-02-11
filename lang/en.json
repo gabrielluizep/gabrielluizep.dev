@@ -4,5 +4,6 @@
   "page.home.hero.portfolio": "View my portfolio!",
   "navbar.about": "About",
   "navbar.contact": "Contact",
-  "navbar.curriculum": "Curriculum"
+  "navbar.curriculum": "Curriculum",
+  "page.portfolio.portfolioProjects": "Projetos do portfólio"
 }
