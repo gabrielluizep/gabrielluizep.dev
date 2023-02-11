@@ -1,10 +1,11 @@
 import Image from 'next/image'
 
-import { SiJavascript, SiNextdotjs, SiPrisma, SiReact, SiTailwindcss, SiTypescript } from 'react-icons/si'
+// import { SiJavascript, SiNextdotjs, SiPrisma, SiReact, SiTailwindcss, SiTypescript } from 'react-icons/si'
 import { useIntl } from 'react-intl'
 
 import Navbar from '../components/home/Navbar'
 import SideLinks from '../components/home/SideLinks'
+import Link from 'next/link'
 
 export default function Index() {
   const intl = useIntl()
@@ -24,20 +25,23 @@ export default function Index() {
               <h1 className="line mt-8 mb-8 font-IntegralCF text-4xl leading-tight tracking-widest text-text">
                 {title} <br /> <span className="tracking-normal text-primary">Gabriel Espindola!</span>
               </h1>
-              <p className="mb-8 max-w-sm text-lg tracking-wider text-text">{subtitle}</p>
+              <p className="mb-12 max-w-sm text-lg tracking-wider text-text">{subtitle}</p>
 
-              <div className="mb-6 flex space-x-5 text-2xl text-text transition-colors">
+              {/* <div className="mb-6 flex space-x-5 text-2xl text-text transition-colors">
                 <SiReact className="hover:text-primary" />
                 <SiTypescript className="hover:text-primary" />
                 <SiJavascript className="hover:text-primary" />
                 <SiNextdotjs className="hover:text-primary" />
                 <SiPrisma className="hover:text-primary" />
                 <SiTailwindcss className="hover:text-primary" />
-              </div>
+              </div> */}
 
-              <button className="bg-primary px-6 py-3 text-2xl font-bold text-backgroundLighter">
+              <Link
+                href="/portfolio"
+                className="bg-primary px-6 py-3 text-2xl font-bold text-backgroundLighter"
+              >
                 {portfolio}
-              </button>
+              </Link>
             </div>
 
             <div className="layou relative m-auto mt-8 aspect-square h-[358px] w-[267px] bg-cyan-500 object-cover lg:mt-0">
