@@ -2,13 +2,13 @@ import { FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi'
 
 export default function SideLinks() {
   return (
-    <div className="fixed sm:block right-16 md:right-24 lg:right:32 bottom-0 h-32 w-[1px] bg-text hidden">
-      <div className="space-y-5 absolute -translate-x-1/2 -top-full">
+    <div className="lg:right:32 fixed right-16 bottom-0 hidden h-32 w-[1px] bg-text sm:block md:right-24">
+      <div className="absolute -top-full -translate-x-1/2 space-y-5">
         <a
           target="_blank"
           rel="noreferrer"
           href="https://www.github.com/gabrielluizep"
-          className="hidden sm:block text-white cursor-pointer hover:text-primary shadow-2xl"
+          className="hidden cursor-pointer text-white shadow-2xl hover:text-primary sm:block"
         >
           <FiGithub color="inherit" size={24} />
         </a>
@@ -16,7 +16,7 @@ export default function SideLinks() {
           target="_blank"
           rel="noreferrer"
           href="https://www.twitter.com/gabrielluizep"
-          className="hidden sm:block text-white cursor-pointer hover:text-primary shadow-2xl"
+          className="hidden cursor-pointer text-white shadow-2xl hover:text-primary sm:block"
         >
           <FiTwitter color="inherit" size={24} />
         </a>
@@ -24,7 +24,7 @@ export default function SideLinks() {
           target="_blank"
           rel="noreferrer"
           href="https://www.linkedin.com/in/gabrielluizep"
-          className="hidden sm:block text-white cursor-pointer hover:text-primary shadow-2xl"
+          className="hidden cursor-pointer text-white shadow-2xl hover:text-primary sm:block"
         >
           <FiLinkedin color="inherit" size={24} />
         </a>

@@ -26,9 +26,9 @@ export default function Navbar() {
 
   return (
     <nav className="flex items-center justify-between">
-      <div className="flex space-x-4 items-center">
-        <Image src="/logo.svg" alt="logo" width={48} height={48} className="hover:rotate-45 transition-all" />
-        <h1 className="text-primary font-mono">gabrielluizep.dev</h1>
+      <div className="flex items-center space-x-4">
+        <Image src="/logo.svg" alt="logo" width={48} height={48} className="transition-all hover:rotate-45" />
+        <h1 className="font-mono text-primary">gabrielluizep.dev</h1>
       </div>
 
       {/* Mobile Menu */}
@@ -37,7 +37,7 @@ export default function Navbar() {
         <div
           className={`${
             open ? 'absolute' : 'hidden'
-          } right-0 top-full w-48 bg-backgroundLighter grid grid-cols-2 p-5 space-y-5 justify-self-center z-50 shadow-sm shadow-primary text-white font-bold`}
+          } right-0 top-full z-50 grid w-48 grid-cols-2 space-y-5 justify-self-center bg-backgroundLighter p-5 font-bold text-white shadow-sm shadow-primary`}
         >
           <p />
           <Link href="#about" passHref>
@@ -58,7 +58,7 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
             href="https://www.github.com/gabrielluizep"
-            className="text-white cursor-pointer shadow-2xl place-self-start mt-auto"
+            className="mt-auto cursor-pointer place-self-start text-white shadow-2xl"
           >
             <FiGithub color="inherit" size={24} />
           </a>
@@ -66,7 +66,7 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
             href="https://www.github.com/gabrielluizep"
-            className="text-white cursor-pointer shadow-2xl place-self-start mt-auto"
+            className="mt-auto cursor-pointer place-self-start text-white shadow-2xl"
           >
             GitHub
           </a>
@@ -74,7 +74,7 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
             href="https://www.twitter.com/gabrielluizep"
-            className="text-white cursor-pointer shadow-2xl place-self-start mt-auto"
+            className="mt-auto cursor-pointer place-self-start text-white shadow-2xl"
           >
             <FiTwitter color="inherit" size={24} />
           </a>
@@ -82,7 +82,7 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
             href="https://www.twitter.com/gabrielluizep"
-            className="text-white cursor-pointer shadow-2xl place-self-start mt-auto"
+            className="mt-auto cursor-pointer place-self-start text-white shadow-2xl"
           >
             Twitter
           </a>
@@ -90,7 +90,7 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
             href="https://www.linkedin.com/in/gabrielluizep"
-            className="text-white cursor-pointer shadow-2xl place-self-start mt-auto"
+            className="mt-auto cursor-pointer place-self-start text-white shadow-2xl"
           >
             <FiLinkedin color="inherit" size={24} />
           </a>
@@ -98,7 +98,7 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
             href="https://www.linkedin.com/in/gabrielluizep"
-            className="text-white cursor-pointer shadow-2xl place-self-start mt-auto"
+            className="mt-auto cursor-pointer place-self-start text-white shadow-2xl"
           >
             Linkedin
           </a>
@@ -106,18 +106,18 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden space-x-5 md:flex md:space-x-10 text-white items-center">
+      <div className="hidden items-center space-x-5 text-white md:flex md:space-x-10">
         {/* <Link href="#about" passHref>
           <button className="text-white py-1 px-4 border-2 border-text">Sobre</button>
         </Link> */}
         <Link href="mailto:gabrielluizep@hotmail.com" passHref>
-          <button className="py-1 px-4 border-2 border-text">{contact}</button>
+          <button className="border-2 border-text py-1 px-4">{contact}</button>
         </Link>
         <Link href="/curriculum.pdf" passHref>
-          <button className="py-2 px-4 border-2 border-primary">{curriculum}</button>
+          <button className="border-2 border-primary py-2 px-4">{curriculum}</button>
         </Link>
 
-        <button className="py-2 px-2 border-2 border-primary" onClick={handleChangeLanguage}>
+        <button className="border-2 border-primary py-2 px-2" onClick={handleChangeLanguage}>
           <FiGlobe color="inherit" size={24} />
         </button>
       </div>
