@@ -6,7 +6,9 @@ import { IntlProvider } from 'react-intl'
 import ptBR from '../lang/pt-BR.json'
 import en from '../lang/en.json'
 
-const messages = {
+const messages: {
+  [key: string]: { [key: string]: string }
+} = {
   'pt-BR': ptBR,
   en,
 }
