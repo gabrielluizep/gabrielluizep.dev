@@ -44,6 +44,13 @@ export default function Portfolio() {
             {project.title}
           </Link>
         ))}
+
+        <Link
+          href={`https://minecraft.gabrielluizep.dev`}
+          className="mb-4 block text-lg font-semibold text-white underline md:text-2xl"
+        >
+          Minecraft
+        </Link>
       </main>
     </div>
   )
