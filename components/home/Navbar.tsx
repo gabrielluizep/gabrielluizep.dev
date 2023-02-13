@@ -50,7 +50,7 @@ export default function Navbar() {
           </Link>
           <p />
 
-          <Link href="/curriculum.pdf" passHref>
+          <Link href="/Gabriel Espindola Curriculum.pdf" passHref>
             {curriculum}
           </Link>
 
@@ -113,7 +113,7 @@ export default function Navbar() {
         <Link href="mailto:gabrielluizep@hotmail.com" passHref>
           <button className="border-2 border-text py-1 px-4">{contact}</button>
         </Link>
-        <Link href="/curriculum.pdf" passHref>
+        <Link href="/Gabriel Espindola Curriculum.pdf" passHref>
           <button className="border-2 border-primary py-2 px-4">{curriculum}</button>
         </Link>
 
