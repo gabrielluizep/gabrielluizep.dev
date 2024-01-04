@@ -13,7 +13,8 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Github, Linkedin } from 'lucide-react';
+import axios from 'axios';
+import { Check, Github, Linkedin, Loader } from 'lucide-react';
 import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
 
@@ -37,6 +38,16 @@ export const Footer = () => {
   });
 
   const isLoading = form.formState.isLoading;
+  const isSubmitSuccessful = form.formState.isSubmitSuccessful;
+
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    console.log(data);
+    try {
+      await axios.post('/api/send', data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="min-h-96 bg-foreground text-background">
@@ -73,9 +84,13 @@ export const Footer = () => {
             </Button>
           </a>
         </div>
+
         <Form {...form}>
-          <form className="w-full md:w-1/2 ">
-            <div className="flex gap-4">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="w-full md:w-1/2"
+          >
+            <div className="flex gap-4 mb-4">
               <FormField
                 control={form.control}
                 name="name"
@@ -137,8 +152,17 @@ export const Footer = () => {
               )}
             />
 
-            <Button className="w-full mt-4">
-              {isLoading ? 'Sending...' : 'Send'}
+            <Button
+              disabled={isLoading || isSubmitSuccessful}
+              className="w-full mt-4"
+            >
+              {isLoading ? (
+                <Loader className="animate-spin" />
+              ) : isSubmitSuccessful ? (
+                <Check />
+              ) : (
+                'Send'
+              )}
             </Button>
           </form>
         </Form>
