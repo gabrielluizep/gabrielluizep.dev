@@ -34,7 +34,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="space-y-4 spa">
+      <div id="projects" className="space-y-4 spa">
         <h4 className="text-xl font-semibold">Projects</h4>
 
         <div className="xl:flex block xl:gap-4 space-y-4 xl:space-y-0">
