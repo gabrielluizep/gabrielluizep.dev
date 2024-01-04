@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 import { Resend } from 'resend';
 
-import { EmailTemplate } from '@/emails/email-template';
+import ContactForm from '@/emails/contact-form';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     from: 'Gabriel Espindola <website@gabrielluizep.dev>',
     to: ['gabrielluizep.glep@gmail.com', email],
     subject: 'Contact Form - gabrielluizep.dev',
-    react: EmailTemplate({ name, email, message }),
+    react: ContactForm({ name, email, message }),
   });
 
   if (error) {
