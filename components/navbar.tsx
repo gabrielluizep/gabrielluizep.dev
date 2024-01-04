@@ -20,19 +20,27 @@ export const Navbar = () => {
 
       <ul className="hidden md:flex items-center gap-4 ml-auto">
         <li>
-          <Link href="/">Home</Link>
+          <Link href="/">
+            <Button variant="link">Home</Button>
+          </Link>
         </li>
 
         <li>
-          <Link href="/projects">Projects</Link>
+          <Link href="/projects">
+            <Button variant="link">Projects</Button>
+          </Link>
         </li>
 
         <li>
-          <Link href="/blog">Blog</Link>
+          <Link href="/blog">
+            <Button variant="link">Blog</Button>
+          </Link>
         </li>
 
         <li>
-          <Link href="/#contact">Contact Me!</Link>
+          <Link href="/#contact">
+            <Button variant="link">Contact</Button>
+          </Link>
         </li>
       </ul>
 
