@@ -45,7 +45,6 @@ export const Navbar = () => {
         </li>
       </ul>
 
-      {/* TODO: Add theme toggle */}
       <ModeToggle />
     </nav>
   );
