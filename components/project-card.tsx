@@ -34,11 +34,10 @@ export const ProjectCard = ({
       <CardContent className="flex-grow overflow-hidden">
         <Image
           src={image}
-          objectFit="cover"
           width={1887}
           height={1060}
           alt="project"
-          className="rounded-sm"
+          className="rounded-sm object-cover"
         />
       </CardContent>
 
