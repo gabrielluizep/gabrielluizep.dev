@@ -4,7 +4,7 @@ export const AvatarProfile = ({ className }: { className?: string }) => {
   return (
     <Avatar className={className}>
       <AvatarImage src="https://github.com/gabrielluizep.png" alt="profile" />
-      <AvatarFallback>Test</AvatarFallback>
+      <AvatarFallback>G</AvatarFallback>
     </Avatar>
   );
 };
