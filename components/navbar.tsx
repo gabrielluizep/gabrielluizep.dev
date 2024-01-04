@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Menu, Spade } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
+import { ModeToggle } from './mode-toggle';
 
 export const Navbar = () => {
   return (
@@ -45,6 +46,7 @@ export const Navbar = () => {
       </ul>
 
       {/* TODO: Add theme toggle */}
+      <ModeToggle />
     </nav>
   );
 };
