@@ -1,14 +1,38 @@
-import { Hammer } from 'lucide-react';
+import React from 'react';
 
-export default function BlogMainPage() {
+import Link from 'next/link';
+
+import { getPostsData } from '@/lib/blog-functions';
+
+export default async function Blogs() {
+  const blogs = await getPostsData();
+
+  //Case: no posts
+  if (blogs.length === 0) {
+    return (
+      <div className="container mx-auto p-4">There are no posts yet...</div>
+    );
+  }
+
+  //Display all posts
   return (
-    <div className="flex flex-col">
-      <h1 className="font-semibold text-lg">Blog</h1>
+    <div className="container mx-auto p-4">
+      <p>Here are my latest blog posts. Enjoy</p>
 
-      <div className="flex h-64 items-center justify-center gap-2 font-bold text-2xl">
-        <Hammer />
-        Under development!
-      </div>
+      <ul className="border-t border-dotted mt-4 py-4 flex flex-col gap-4">
+        {blogs.map(blog => {
+          return (
+            <li key={blog.id}>
+              <Link prefetch={false} href={`/blog/${blog.id}`}>
+                {blog.title}
+                <span className="ml-2 text-xs opacity-50">
+                  {blog.date.toLocaleDateString()}
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
