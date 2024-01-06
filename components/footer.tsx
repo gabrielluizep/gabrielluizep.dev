@@ -154,7 +154,8 @@ export const Footer = () => {
 
             <Button
               disabled={isLoading || isSubmitSuccessful}
-              className="w-full mt-4"
+              className="w-full mt-4 bg-foreground"
+              variant="outline"
             >
               {isLoading ? (
                 <Loader className="animate-spin" />
