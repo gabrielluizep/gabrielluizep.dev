@@ -41,7 +41,7 @@ export default function Home() {
           <ProjectCard
             title="leaflet-with-react"
             image="/leaflet-with-react.png"
-            link="https://gabrielluizep.github.io/leaflet-with-react/"
+            link="https://leaflet.gabrielluizep.dev/"
             description="A project to learn how to use Leaflet with React focusing in Heatmap and Clusters"
           />
 
